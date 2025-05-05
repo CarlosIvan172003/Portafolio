@@ -80,7 +80,6 @@
 
     <main>
         <div class="ContainerBienvenida">
-            <img src="img/3135768.png" alt="">
             <div class="Titulo">
                 <h1>¡Hola! Bienvenido a mi portafolio</h1>
                 <p id="Nombre">Mi nombre es Carlos Iván López Martínez</p>
@@ -89,21 +88,23 @@
                     soluciones
                     prácticas que conecten el mundo físico y digital.</p>
             </div>
+            <img src="img/3135768.png" alt="">
             <div id="SVGDesarrollo"></div>
             <div id="SVGElectronica"></div>
         </div>
 
-        
-        <div class="contenido" >
+
+        <div class="contenido">
             <div>
                 <h2>💻 Desarrollo de Software</h2>
                 <p><strong>Back-end:</strong> Diseño e implementación de APIs, lógica de negocio y manejo de datos.</p>
                 <p><strong>Front-end:</strong> Creación de interfaces web modernas y responsivas.</p>
-                <p><strong>Desarrollo Web:</strong> Experiencia completa en aplicaciones web, desde la base de datos hasta
+                <p><strong>Desarrollo Web:</strong> Experiencia completa en aplicaciones web, desde la base de datos
+                    hasta
                     la
                     experiencia de usuario.</p>
                 <p><strong>Desarrollo Móvil:</strong> Aplicaciones multiplataforma funcionales e intuitivas.</p>
-    
+
                 <h2>🤖 Mecatrónica</h2>
                 <p>Diseño y programación de <strong>microcontroladores</strong> (Arduino, PIC, ESP32, etc.).</p>
                 <p>Automatización de procesos mediante <strong>sensores, actuadores y PLCs</strong>.</p>
@@ -113,7 +114,7 @@
                 <p>Creación de <strong>sistemas inteligentes</strong> que combinan electrónica y programación.</p>
                 <p>Soluciones de control y monitoreo en tiempo real.</p>
             </div>
-            
+
 
         </div>
 
@@ -209,8 +210,8 @@
         function CharHover() {
             gsap.timeline()
                 .to(char, {
-                    y: gsap.utils.random(-250, 250),
-                    x: gsap.utils.random(-500, 500),
+                    y: gsap.utils.random(-200, 200),
+                    x: gsap.utils.random(-200, 200),
                     rotate: gsap.utils.random(-360, 360),
                     scale: gsap.utils.random(0, 2),
                     ease: "back.out"
@@ -270,7 +271,7 @@
             trigger: ".contenido",
             toggleActions: "play reverse play reverse",
         },
-        x: 1200, 
+        x: -1200,
         rotate: 360,
         duration: 1,
         ease: "power2.out"
@@ -280,7 +281,7 @@
             trigger: ".contenido",
             toggleActions: "play reverse play reverse"
         },
-        x: -350,
+        x: 350,
         //rotate: 360,
         duration: 1,
         ease: "power2.out"

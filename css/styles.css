@@ -159,9 +159,9 @@ main{
 
 .ContainerBienvenida #SVGDesarrollo{
     position: absolute;
-    bottom: -150px;
-    right: -200px;
-    width: 1200px;
+    bottom: -285px;
+    right: -350px;
+    width: 1500px;
     opacity: 25%;
     
 }
@@ -169,10 +169,10 @@ main{
 .ContainerBienvenida #SVGElectronica{
     position: absolute;
     width: 900px;
-    height: 800px;
+    height: 900px;
     opacity: 25%;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
 }
 
 
