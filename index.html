@@ -11,6 +11,7 @@
 
 <body>
 
+
     <nav>
         <div class="ContainerFirma">
             <div class="Firma">
@@ -78,16 +79,43 @@
     </nav>
 
     <main>
-
         <div class="ContainerBienvenida">
             <img src="img/3135768.png" alt="">
             <div class="Titulo">
                 <h1>¡Hola! Bienvenido a mi portafolio</h1>
-                <p>Mi nombre es Carlos Iván López Martínez</p>
-                <p>Soy Ingeniero en Software con formación técnica en Mecatrónica. Me apasiona la tecnología y crear
+                <p id="Nombre">Mi nombre es Carlos Iván López Martínez</p>
+                <p id="Descripcion">Soy Ingeniero en Software con formación técnica en Mecatrónica. Me apasiona la
+                    tecnología y crear
                     soluciones
                     prácticas que conecten el mundo físico y digital.</p>
             </div>
+            <div id="SVGDesarrollo" style="width: 500px; height: 500px;"></div>
+            <div id="SVGElectronica"></div>
+        </div>
+
+        
+        <div class="contenido" >
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div style="display: none;">
+                <h2>💻 Desarrollo de Software</h2>
+                <p><strong>Back-end:</strong> Diseño e implementación de APIs, lógica de negocio y manejo de datos.</p>
+                <p><strong>Front-end:</strong> Creación de interfaces web modernas y responsivas.</p>
+                <p><strong>Desarrollo Web:</strong> Experiencia completa en aplicaciones web, desde la base de datos hasta
+                    la
+                    experiencia de usuario.</p>
+                <p><strong>Desarrollo Móvil:</strong> Aplicaciones multiplataforma funcionales e intuitivas.</p>
+    
+                <h2>🤖 Mecatrónica</h2>
+                <p>Diseño y programación de <strong>microcontroladores</strong> (Arduino, PIC, ESP32, etc.).</p>
+                <p>Automatización de procesos mediante <strong>sensores, actuadores y PLCs</strong>.</p>
+                <p>Desarrollo de <strong>prototipos electrónicos</strong> para resolver problemas reales.</p>
+                <p>Diseño y montaje de <strong>circuitos electrónicos</strong> tanto analógicos como digitales.</p>
+                <p>Integración de hardware con <strong>aplicaciones software personalizadas</strong>.</p>
+                <p>Creación de <strong>sistemas inteligentes</strong> que combinan electrónica y programación.</p>
+                <p>Soluciones de control y monitoreo en tiempo real.</p>
+            </div>
+            
+
         </div>
 
 
@@ -96,69 +124,168 @@
 
 
 
-        <h2>💻 Desarrollo de Software</h2>
-        <p><strong>Back-end:</strong> Diseño e implementación de APIs, lógica de negocio y manejo de datos.</p>
-        <p><strong>Front-end:</strong> Creación de interfaces web modernas y responsivas.</p>
-        <p><strong>Desarrollo Web:</strong> Experiencia completa en aplicaciones web, desde la base de datos hasta la
-            experiencia de usuario.</p>
-        <p><strong>Desarrollo Móvil:</strong> Aplicaciones multiplataforma funcionales e intuitivas.</p>
-
-        <h2>🤖 Mecatrónica</h2>
-        <p>Diseño y programación de <strong>microcontroladores</strong> (Arduino, PIC, ESP32, etc.).</p>
-        <p>Automatización de procesos mediante <strong>sensores, actuadores y PLCs</strong>.</p>
-        <p>Desarrollo de <strong>prototipos electrónicos</strong> para resolver problemas reales.</p>
-        <p>Diseño y montaje de <strong>circuitos electrónicos</strong> tanto analógicos como digitales.</p>
-        <p>Integración de hardware con <strong>aplicaciones software personalizadas</strong>.</p>
-        <p>Creación de <strong>sistemas inteligentes</strong> que combinan electrónica y programación.</p>
-        <p>Soluciones de control y monitoreo en tiempo real.</p>
 
 
     </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 
 <script src="https://cdn.lordicon.com/lordicon.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
 <script>
-    // const icon = document.getElementById('svgatorIcon');
-   
-    // const anim = lottie.loadAnimation({
-    //     container: document.getElementById('svgatorIcon'),
-    //     renderer: 'svg',
-    //     loop: false, // o true si quieres que repita
-    //     autoplay: false, // ❗ esto es importante
-    //     path: 'icons/Escritorio.json'
-    // });
 
-    // document.getElementById('svgatorIcon').addEventListener('click', () => {
-    //     anim.play();
-    // });
+    // ----------------------------> Animaciones SVG <----------------------------
+
+    lottie.loadAnimation({
+        container: document.getElementById('SVGDesarrollo'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'icons/SVGDesarrollo.json'
+    });
+
+    lottie.loadAnimation({
+        container: document.getElementById('SVGElectronica'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'icons/SVGElectronica.json'
+    });
 
 
-    // lottie.loadAnimation({
-    //     container: document.getElementById('svgatorIcon'),
-    //     renderer: 'svg',
-    //     loop: true, // o false si solo quieres que se reproduzca una vez
-    //     autoplay: true,
-    //     path: 'icons/Pruebas.json' // ruta a tu archivo JSON
-    // });
+
+    // ----------------------------> Animaciones GSAP <----------------------------
+    gsap.registerPlugin(ScrollTrigger);
+    let NavFirma = document.querySelector('.ContainerFirma');
+    let NavSecciones = document.querySelectorAll('nav li');
+    let Titulo = document.querySelector('.ContainerBienvenida .Titulo h1');
+    let Nombre = document.querySelector('.ContainerBienvenida .Titulo #Nombre');
+    let Descripcion = document.querySelector('.ContainerBienvenida .Titulo #Descripcion');
+
+    gsap.from(".ContainerBienvenida", {
+        opacity: 0,
+        y: -150,
+        duration: 1.5,
+        ease: "power1.out"
+    });
+
+
+    gsap.from(NavFirma, {
+        opacity: 0,
+        y: -100,
+        ease: "bounce.out",
+        duration: 2
+    });
+    gsap.from(NavSecciones, {
+        y: -100,
+        ease: "power3.out",
+        stagger: 0.25
+    });
+
+    const TituloCaracteres = new SplitType(Titulo, { types: 'words, chars' });
+    TituloCaracteres.chars.forEach((char, index) => {
+
+        let CharsTL = gsap.timeline();
+
+        CharsTL.from(char, {
+            y: gsap.utils.random(-250, 250),
+            x: gsap.utils.random(-500, 500),
+            rotate: gsap.utils.random(-360, 360),
+            scale: gsap.utils.random(0, 10),
+            opacity: 0,
+            duration: 0.5,
+            delay: index * 0.05,
+            ease: "back.out"
+        });
+        CharsTL.from(char, {
+            color: `rgb(${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)})`,
+            duration: 1
+        },);
+
+        char.addEventListener("mouseenter", CharHover);
+
+        function CharHover() {
+            gsap.timeline()
+                .to(char, {
+                    y: gsap.utils.random(-250, 250),
+                    x: gsap.utils.random(-500, 500),
+                    rotate: gsap.utils.random(-360, 360),
+                    scale: gsap.utils.random(0, 5),
+                    ease: "back.out"
+                })
+                .to(char, {
+                    y: 0,
+                    x: 0,
+                    rotate: 0,
+                    scale: 1,
+                    duration: 0.5,
+                    ease: "back.out"
+                });
+
+        }
+    });
+
+    const NombreChars = new SplitType(Nombre, { types: 'words, chars' });
+    gsap.from(NombreChars.chars, {
+        opacity: 0,
+        y: 20,
+        stagger: 0.05,
+        ease: "back.out",
+        duration: 0.6
+    });
+
+    const DescripcionWords = new SplitType(Descripcion, { types: 'words' });
+    gsap.from(DescripcionWords.words, {
+        opacity: 0,
+        y: 1000,
+        duration: 1,
+        ease: "back.out",
+    });
+
+
+    gsap.fromTo("#SVGDesarrollo",
+        { x: -1500 },
+        { x: 0, duration: 2, ease: "power2.out" }
+    );
+
+    gsap.fromTo("#SVGElectronica",
+        { x: 1500 },
+        { x: 0, duration: 2, ease: "power2.out" }
+    );
+
+    gsap.to(".ContainerBienvenida img", {
+        boxShadow: "0 0 20px rgba(255, 255, 255, 0.8)",
+        scale: 1.05,
+        repeat: -1,
+        yoyo: true,
+        duration: 2,
+        ease: "sine.inOut"
+    });
+
+
+    gsap.to(".ContainerBienvenida img", {
+        scrollTrigger: {
+            trigger: ".contenido",
+            toggleActions: "play reverse play reverse",
+        },
+        x: 1000, 
+        rotate: 360,
+        duration: 1,
+        ease: "power2.out"
+    });
+    gsap.to(".Titulo", {
+        scrollTrigger: {
+            trigger: ".contenido",
+            toggleActions: "play reverse play reverse"
+        },
+        x: -250,
+        //rotate: 360,
+        duration: 1,
+        ease: "power2.out"
+    });
 
 </script>
 
