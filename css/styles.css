@@ -113,26 +113,34 @@ main{
 /* --------------> Estilos para bienvenida <--------------*/
 
 .ContainerBienvenida{
-    height: 100%;
+    height: 80vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Empuja el contenido hacia arriba */
+    padding-top: 12%;
     flex-direction: row;
 }
 
 .ContainerBienvenida img{
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     border-radius: 70px;
     border: 2px solid var(--Detalles);
+    z-index: 99;
+    padding: 0;
+    margin: 0;
 }
 
 .ContainerBienvenida .Titulo{
-    width: 1000px;
-    height: 250px;
+    width: 1200px;
+    height: 350px;
     gap: 30px;
     display: flex;
     flex-direction: column;
+    z-index: 99;
+    padding: 0;
+    margin: 0;
 }
 
 .ContainerBienvenida .Titulo h1{
@@ -141,28 +149,36 @@ main{
     margin-left: 30px;
     font-family: GoldenState;
     font-weight: bold;
-    font-size: 3.3em;
+    font-size: 4em;
 }
 
 .ContainerBienvenida .Titulo p{
     margin-left: 30px;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .ContainerBienvenida #SVGDesarrollo{
     position: absolute;
+    bottom: -150px;
+    right: -200px;
+    width: 1200px;
+    opacity: 25%;
+    
+}
+
+.ContainerBienvenida #SVGElectronica{
+    position: absolute;
+    width: 900px;
+    height: 800px;
+    opacity: 25%;
     top: 0;
     left: 0;
 }
 
-.ContainerBienvenida #SVGElectronica, .ContainerBienvenida #SVGElectronicaExtra{
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    bottom: 100px;
-    right: 50px;
-}
 
+.contenido{
+    background-color: #FFD700;
+}
 
 
 
