@@ -13,19 +13,22 @@
     /*Color Blanco cálido, para descripcion*/
     --TextoSecundario: #B3B3B3;
     /*Color gris, para descripciones o texto de menor peso*/
+    --TextoOscuro: #000;
 
 }
 
-img, p, li{
+img,
+p,
+li {
     padding: 0;
     margin: 0;
 }
 
-h1{
+h1 {
     color: var(--Titulos);
 }
 
-p{
+p {
     color: var(--Descripcion);
 }
 
@@ -53,26 +56,31 @@ nav {
     height: 100px;
     z-index: 100;
 }
+
 nav .ContainerFirma {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 50px;
 }
+
 nav .ContainerFirma img {
     width: 50px;
     height: 50px;
 }
-nav .ContainerFirma h1{
+
+nav .ContainerFirma h1 {
     color: var(--Titulos);
     margin-left: 8px;
 }
+
 nav ul {
     list-style: none;
     display: flex;
     gap: 70px;
 }
-nav li a{
+
+nav li a {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -82,27 +90,30 @@ nav li a{
     color: inherit;
 }
 
-nav li a:hover{
+nav li a:hover {
     background-color: var(--TextoSecundario);
     border-radius: 20px;
 }
 
 nav li a:hover p {
     color: black;
-  }
-nav li a lord-icon{
+}
+
+nav li a lord-icon {
     width: 45px;
     height: 45px;
 }
-nav li a p{
+
+nav li a p {
     font-weight: bold;
 }
-nav .Modo{
+
+nav .Modo {
     margin-right: 60px;
 }
 
 
-main{
+main {
     position: relative;
     top: 82px;
     height: 100vh;
@@ -112,17 +123,18 @@ main{
 
 /* --------------> Estilos para bienvenida <--------------*/
 
-.ContainerBienvenida{
+.ContainerBienvenida {
     height: 80vh;
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Empuja el contenido hacia arriba */
+    align-items: flex-start;
+    /* Empuja el contenido hacia arriba */
     padding-top: 12%;
     flex-direction: row;
 }
 
-.ContainerBienvenida img{
+.ContainerBienvenida img {
     width: 350px;
     height: 350px;
     border-radius: 70px;
@@ -132,7 +144,7 @@ main{
     margin: 0;
 }
 
-.ContainerBienvenida .Titulo{
+.ContainerBienvenida .Titulo {
     width: 1200px;
     height: 350px;
     gap: 30px;
@@ -143,7 +155,7 @@ main{
     margin: 0;
 }
 
-.ContainerBienvenida .Titulo h1{
+.ContainerBienvenida .Titulo h1 {
     margin-top: 10px;
     margin-bottom: 0;
     margin-left: 30px;
@@ -152,21 +164,21 @@ main{
     font-size: 4em;
 }
 
-.ContainerBienvenida .Titulo p{
+.ContainerBienvenida .Titulo p {
     margin-left: 30px;
     font-size: 2em;
 }
 
-.ContainerBienvenida #SVGDesarrollo{
+.ContainerBienvenida #SVGDesarrollo {
     position: absolute;
     bottom: -285px;
     right: -350px;
     width: 1500px;
     opacity: 25%;
-    
+
 }
 
-.ContainerBienvenida #SVGElectronica{
+.ContainerBienvenida #SVGElectronica {
     position: absolute;
     width: 900px;
     height: 900px;
@@ -175,16 +187,93 @@ main{
     left: 0px;
 }
 
+/* --------------> Estilos para las cartas <--------------*/
+.TituloCartas{
+    text-align: center;
+    padding: 0;
+    font-size: 3em;
 
-.contenido{
-    background-color: #FFD700;
 }
 
+.ContenedorCartas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 40px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
 
+.ContenedorCartas .Carta {
+    position: relative;
+    background: linear-gradient(135deg, #1e1e2f, #0a0a0a);
+    height: 600px;
+    border: 2px solid var(--Botones);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
 
+.ContenedorCartas .Carta .SVG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+}
 
+.Carta-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
 
+.ContenedorCartas .Carta h1 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
+.ContenedorCartas .Carta ul {
+    padding: 0;
+    list-style-position: inside;
+    margin-bottom: 30px;
+}
 
+.ContenedorCartas .Carta li {
+    color: var(--Descripcion, #eee);
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
 
+.ContenedorCartas .Carta button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--Botones);
+    color: var(--Descripcion);
+    padding: 15px;
+    width: 20%;
+    border: 1px solid var(--Detalles);
+    border-radius: 20px;
+    z-index: 2;
+}
 
+.ContenedorCartas .Carta button:hover{
+    background-color: var(--Detalles);
+    color: var(--TextoOscuro);
+    scale: 1.1;
+}

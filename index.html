@@ -94,37 +94,79 @@
         </div>
 
 
-        <div class="contenido">
-            <div>
-                <h2>💻 Desarrollo de Software</h2>
-                <p><strong>Back-end:</strong> Diseño e implementación de APIs, lógica de negocio y manejo de datos.</p>
-                <p><strong>Front-end:</strong> Creación de interfaces web modernas y responsivas.</p>
-                <p><strong>Desarrollo Web:</strong> Experiencia completa en aplicaciones web, desde la base de datos
-                    hasta
-                    la
-                    experiencia de usuario.</p>
-                <p><strong>Desarrollo Móvil:</strong> Aplicaciones multiplataforma funcionales e intuitivas.</p>
-
-                <h2>🤖 Mecatrónica</h2>
-                <p>Diseño y programación de <strong>microcontroladores</strong> (Arduino, PIC, ESP32, etc.).</p>
-                <p>Automatización de procesos mediante <strong>sensores, actuadores y PLCs</strong>.</p>
-                <p>Desarrollo de <strong>prototipos electrónicos</strong> para resolver problemas reales.</p>
-                <p>Diseño y montaje de <strong>circuitos electrónicos</strong> tanto analógicos como digitales.</p>
-                <p>Integración de hardware con <strong>aplicaciones software personalizadas</strong>.</p>
-                <p>Creación de <strong>sistemas inteligentes</strong> que combinan electrónica y programación.</p>
-                <p>Soluciones de control y monitoreo en tiempo real.</p>
+        <h1 class="TituloCartas">Stack de desarrollo</h1>
+        <div class="ContenedorCartas">
+            <div class="Carta">
+                <div class="SVG" id="SVGWeb"></div>
+                <div class="Carta-content">
+                    <h1>Desarrollo Web</h1>
+                    <ul>
+                        <li>C# / .NET Framework 4.8.1</li>
+                        <li>ASP.NET Web Forms y MVC (.NET Core 6+)</li>
+                        <li>HTML5 / CSS3 / JavaScript</li>
+                        <li>Diseño responsive y adaptativo</li>
+                        <li>Integración con APIs REST y SOAP</li>
+                        <li>Validaciones personalizadas y formularios dinámicos</li>
+                        <li>Sistemas a medida para automatización de procesos</li>
+                    </ul>
+                </div>
+                <button>Ver mas</button>
             </div>
-
-
+            <div class="Carta">
+                <div class="SVG" id="SVGMovil"></div>
+                <div class="Carta-content">
+                    <h1>Desarrollo Móvil</h1>
+                    <ul>
+                        <li>Flutter (Android/iOS)</li>
+                        <li>Apps multiplataforma con Dart</li>
+                        <li>Notificaciones push</li>
+                        <li>Consumo de APIs REST</li>
+                        <li>UI responsiva y animaciones</li>
+                        <li>Integración con SQLite y Firebase</li>
+                        <li>Despliegue y pruebas en emuladores</li>
+                    </ul>
+                </div>
+                <button>Ver mas</button>
+            </div>
+            <div class="Carta">
+                <div class="SVG" id="SVGMecatronica"></div>
+                <div class="Carta-content">
+                    <h1>Mecatrónica</h1>
+                    <ul>
+                        <li>Programación de microcontroladores (Arduino, ESP32)</li>
+                        <li>Sensores, actuadores y controladores (PWM, I2C, UART)</li>
+                        <li>Diseño y simulación de circuitos electrónicos</li>
+                        <li>Prototipos electrónicos funcionales</li>
+                        <li>Desarrollo de sistemas embebidos con C/C++</li>
+                        <li>Interfaz gráfica para control desde PC o móvil</li>
+                        <li>Integración hardware-software personalizada</li>
+                    </ul>
+                </div>
+                <button>Ver mas</button>
+            </div>
+            <div class="Carta">
+                <div class="SVG" id="SVGBaseDatos"></div>
+                <div class="Carta-content">
+                    <h1>Bases de Datos</h1>
+                    <ul>
+                        <li>SQL Server (Diseño, consultas y optimización)</li>
+                        <li>Entity Framework / ADO.NET</li>
+                        <li>ORM y relaciones complejas (1:1, 1:N, N:N)</li>
+                        <li>Stored Procedures y triggers</li>
+                        <li>Administración de conexiones y transacciones</li>
+                        <li>Diseño de modelos relacionales</li>
+                        <li>Backups y recuperación de datos</li>
+                    </ul>
+                </div>
+                <button>Ver mas</button>
+            </div>
         </div>
 
 
+        <br><br> <br><br>f <br><br> <br><br> <br><br>
+        <div class="Empresas">
 
-
-
-
-
-
+        </div>
 
     </main>
 </body>
@@ -135,157 +177,30 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/split-type"></script>
+<script src="js/main.js"></script>
 <script>
 
-    // ----------------------------> Animaciones SVG <----------------------------
+    //     document.querySelectorAll(".borde-svg").forEach((svg) => {
+    //     const rect = svg.querySelector("rect");
 
-    lottie.loadAnimation({
-        container: document.getElementById('SVGDesarrollo'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'icons/SVGDesarrollo.json'
-    });
+    //     svg.parentElement.addEventListener("mouseenter", () => {
+    //         gsap.fromTo(rect, {
+    //             strokeDashoffset: 400
+    //         }, {
+    //             strokeDashoffset: 0,
+    //             duration: 2,
+    //             ease: "power2.out"
+    //         });
+    //     });
 
-    lottie.loadAnimation({
-        container: document.getElementById('SVGElectronica'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'icons/SVGElectronica.json'
-    });
-
-
-
-    // ----------------------------> Animaciones GSAP <----------------------------
-    gsap.registerPlugin(ScrollTrigger);
-    let NavFirma = document.querySelector('.ContainerFirma');
-    let NavSecciones = document.querySelectorAll('nav li');
-    let Titulo = document.querySelector('.ContainerBienvenida .Titulo h1');
-    let Nombre = document.querySelector('.ContainerBienvenida .Titulo #Nombre');
-    let Descripcion = document.querySelector('.ContainerBienvenida .Titulo #Descripcion');
-
-    gsap.from(".ContainerBienvenida", {
-        opacity: 0,
-        y: -150,
-        duration: 1.5,
-        ease: "power1.out"
-    });
-
-
-    gsap.from(NavFirma, {
-        opacity: 0,
-        y: -100,
-        ease: "bounce.out",
-        duration: 2
-    });
-    gsap.from(NavSecciones, {
-        y: -100,
-        ease: "power3.out",
-        stagger: 0.25
-    });
-
-    const TituloCaracteres = new SplitType(Titulo, { types: 'words, chars' });
-    TituloCaracteres.chars.forEach((char, index) => {
-
-        let CharsTL = gsap.timeline();
-
-        CharsTL.from(char, {
-            y: gsap.utils.random(-250, 250),
-            x: gsap.utils.random(-500, 500),
-            rotate: gsap.utils.random(-360, 360),
-            scale: gsap.utils.random(0, 5),
-            opacity: 0,
-            duration: 0.5,
-            delay: index * 0.05,
-            ease: "back.out"
-        });
-        CharsTL.from(char, {
-            color: `rgb(${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)})`,
-            duration: 1
-        },);
-
-        char.addEventListener("mouseenter", CharHover);
-
-        function CharHover() {
-            gsap.timeline()
-                .to(char, {
-                    y: gsap.utils.random(-200, 200),
-                    x: gsap.utils.random(-200, 200),
-                    rotate: gsap.utils.random(-360, 360),
-                    scale: gsap.utils.random(0, 2),
-                    ease: "back.out"
-                })
-                .to(char, {
-                    y: 0,
-                    x: 0,
-                    rotate: 0,
-                    scale: 1,
-                    duration: 0.5,
-                    ease: "back.out"
-                });
-
-        }
-    });
-
-    const NombreChars = new SplitType(Nombre, { types: 'words, chars' });
-    gsap.from(NombreChars.chars, {
-        opacity: 0,
-        y: 20,
-        stagger: 0.05,
-        ease: "back.out",
-        duration: 0.6
-    });
-
-    const DescripcionWords = new SplitType(Descripcion, { types: 'words' });
-    gsap.from(DescripcionWords.words, {
-        opacity: 0,
-        y: 1000,
-        duration: 1,
-        ease: "back.out",
-    });
-
-
-    gsap.fromTo("#SVGDesarrollo",
-        { x: -1500 },
-        { x: 0, duration: 2, ease: "power2.out" }
-    );
-
-    gsap.fromTo("#SVGElectronica",
-        { x: 1500 },
-        { x: 0, duration: 2, ease: "power2.out" }
-    );
-
-    gsap.to(".ContainerBienvenida img", {
-        boxShadow: "0 0 20px rgba(255, 255, 255, 0.8)",
-        scale: 1.05,
-        repeat: -1,
-        yoyo: true,
-        duration: 2,
-        ease: "sine.inOut"
-    });
-
-
-    gsap.to(".ContainerBienvenida img", {
-        scrollTrigger: {
-            trigger: ".contenido",
-            toggleActions: "play reverse play reverse",
-        },
-        x: -1200,
-        rotate: 360,
-        duration: 1,
-        ease: "power2.out"
-    });
-    gsap.to(".Titulo", {
-        scrollTrigger: {
-            trigger: ".contenido",
-            toggleActions: "play reverse play reverse"
-        },
-        x: 350,
-        //rotate: 360,
-        duration: 1,
-        ease: "power2.out"
-    });
+    //     svg.parentElement.addEventListener("mouseleave", () => {
+    //         gsap.to(rect, {
+    //             strokeDashoffset: 400,
+    //             duration: 1,
+    //             ease: "power2.in"
+    //         });
+    //     });
+    // });
 
 </script>
 
