@@ -281,35 +281,449 @@ main {
     scale: 1.1;
 }
 
+/* --------------> Estilos para el pie de pagina <--------------*/
 footer {
-  background-color: var(--FondoSecundario);
-  border-top: 1px solid var(--Detalles);
-  color: var(--TextoSecundario);
-  text-align: center;
-  margin-top: 200px;
-  padding: 20px 20px;
-  font-size: 0.8em;
+    background-color: var(--FondoSecundario);
+    border-top: 1px solid var(--Detalles);
+    color: var(--TextoSecundario);
+    text-align: center;
+    margin-top: 200px;
+    padding: 20px 20px;
+    font-size: 0.8em;
 }
 
 footer a {
-  color: var(--Detalles);
-  text-decoration: none;
-  margin: 0 5px;
+    color: var(--Detalles);
+    text-decoration: none;
+    margin: 0 5px;
 }
 
 footer a:hover {
-  text-decoration: underline;
-  color: var(--Titulos);
+    text-decoration: underline;
+    color: var(--Titulos);
 }
 
 .footer__frase {
-  font-style: italic;
-  color: var(--Descripcion);
-  margin-bottom: 15px;
-  font-size: 16px;
+    font-style: italic;
+    color: var(--Descripcion);
+    margin-bottom: 15px;
+    font-size: 16px;
 }
 
 .footer__contacto p {
-  margin: 5px 0;
-  line-height: 1.6;
+    margin: 5px 0;
+    line-height: 1.6;
 }
+
+/* ---------------------------------> Diseño responsivo <---------------------------------*/
+/* Desktops grandes y monitores */
+@media (min-width: 1281px) {}
+
+/* Laptops y desktops medianos */
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    nav {
+        height: 110px;
+    }
+
+    nav .ContainerFirma {
+        margin-left: 20px;
+    }
+
+
+    .ContainerBienvenida {
+        margin-top: 100px;
+    }
+
+    .ContainerBienvenida .Titulo {
+        width: 600px;
+    }
+
+    .ContainerBienvenida img {
+        width: 330px;
+        height: 330px;
+    }
+
+    .ContainerBienvenida .Titulo h1 {
+        font-size: 3.5em;
+
+    }
+
+    .ContainerBienvenida .Titulo p {
+        font-size: 1.5em;
+    }
+
+    .ContainerBienvenida #SVGDesarrollo {
+        bottom: -330px;
+        right: -325px;
+    }
+
+    .ContainerBienvenida #SVGElectronica {
+        display: none;
+    }
+
+
+    .Carta-content {
+        gap: 20px;
+    }
+
+    .ContenedorCartas .Carta h1 {
+        font-size: 3em;
+    }
+
+    .ContenedorCartas .Carta li {
+        font-size: 1.5em;
+    }
+}
+
+/* Tablets grandes / laptops pequeñas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav .ContainerFirma {
+        margin-left: 15px;
+    }
+
+    nav .ContainerFirma img {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav .ContainerFirma h1 {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        gap: 30px;
+
+    }
+
+    nav li a lord-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav li a p {
+        font-size: 0.7em;
+    }
+
+
+    .ContainerBienvenida {
+        margin-top: 100px;
+    }
+
+    .ContainerBienvenida .Titulo {
+        width: 430px;
+    }
+
+    .ContainerBienvenida img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .ContainerBienvenida .Titulo h1 {
+        font-size: 2.3em;
+    }
+
+    .ContainerBienvenida .Titulo p {
+        font-size: 1.3em;
+    }
+
+    .ContainerBienvenida #SVGDesarrollo {
+        /* width: 1100px;
+        top: -350px;
+        left: -100px; */
+        display: none;
+    }
+
+    .ContainerBienvenida #SVGElectronica {
+        width: 750px;
+        top: -180px;
+    }
+
+
+    .TituloCartas {
+        font-size: 3.8em;
+    }
+
+    .Carta-content {
+        gap: 20px;
+    }
+
+    .ContenedorCartas .Carta h1 {
+        font-size: 2.5em;
+    }
+
+    .ContenedorCartas .Carta li {
+        font-size: 1.3em;
+    }
+
+}
+
+/* Tablets y pantallas pequeñas */
+@media (min-width: 601px) and (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+
+    main {
+        top: 0;
+    }
+
+    .ContainerBienvenida {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+        margin-top: 0;
+        height: 100vh;
+    }
+
+    .ContainerBienvenida .Titulo {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 50px;
+        box-sizing: border-box;
+    }
+
+    .ContainerBienvenida .Titulo h1 {
+        font-size: 3em;
+    }
+
+    .ContainerBienvenida .Titulo p {
+        font-size: 1.5em;
+    }
+
+    .ContainerBienvenida img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .ContainerBienvenida #SVGDesarrollo {
+        display: none;
+    }
+
+    .ContainerBienvenida #SVGElectronica {
+        position: absolute;
+        left: -50px;
+        top: 0%;
+        width: 800px;
+        height: 800px;
+    }
+
+
+    .ContenedorCartas {
+        grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    }
+
+    .ContenedorCartas .Carta {
+        height: 550px;
+    }
+
+    .Carta-content {
+        gap: 30px;
+    }
+
+
+    footer {
+        margin-top: 50px;
+    }
+}
+
+/* Móviles medianos / grandes */
+@media (min-width: 481px) and (max-width: 600px) {
+    nav {
+        display: none;
+    }
+
+    main {
+        top: 0;
+    }
+
+    .ContainerBienvenida {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+        margin-top: 0;
+        height: 100vh;
+    }
+
+    .ContainerBienvenida .Titulo {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 50px;
+        box-sizing: border-box;
+    }
+
+    .ContainerBienvenida .Titulo h1 {
+        font-size: 2.5em;
+    }
+
+    .ContainerBienvenida .Titulo p {
+        font-size: 1.5em;
+    }
+
+    .ContainerBienvenida img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .ContainerBienvenida #SVGDesarrollo {
+        display: none;
+    }
+
+    .ContainerBienvenida #SVGElectronica {
+        position: absolute;
+        left: -50px;
+        top: 0%;
+        width: 800px;
+        height: 800px;
+    }
+
+
+    .TituloCartas {
+        font-size: 2.5em;
+
+    }
+
+    .ContenedorCartas {
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    }
+
+    .ContenedorCartas .Carta {
+        height: 450px;
+    }
+
+    .Carta-content {
+        gap: 20px;
+    }
+
+    .ContenedorCartas .Carta h1 {
+        font-size: 2em;
+    }
+
+    .ContenedorCartas .Carta li {
+        font-size: 0.9em;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    nav {
+        display: none;
+    }
+
+    main {
+        top: 0;
+    }
+
+    .ContainerBienvenida {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+        margin-top: 0;
+        height: 100vh;
+    }
+
+    .ContainerBienvenida .Titulo {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    .ContainerBienvenida .Titulo h1 {
+        font-size: 2em
+    }
+
+    .ContainerBienvenida .Titulo p {
+        font-size: 1.1em;
+    }
+
+    .ContainerBienvenida img {
+        width: 80vw;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .ContainerBienvenida #SVGDesarrollo {
+        display: none;
+    }
+
+    .ContainerBienvenida #SVGElectronica {
+        position: absolute;
+        left: -50px;
+        top: 0%;
+        width: 800px;
+        height: 800px;
+    }
+
+
+    .TituloCartas {
+        font-size: 1.8em;
+
+    }
+
+    .ContenedorCartas {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .ContenedorCartas .Carta {
+        height: 350px;
+    }
+
+    .Carta-content {
+        gap: 0px;
+    }
+
+    .ContenedorCartas .Carta h1 {
+        font-size: 1.5em;
+    }
+
+    .ContenedorCartas .Carta li {
+        font-size: 0.6em;
+    }
+
+    .ContenedorCartas .Carta button {
+        font-size: 0.6em;
+        width: 30%;
+    }
+
+
+    footer {
+        margin-top: 50px;
+    }
+
+    .footer__contacto p {
+        margin: 5px 0;
+        line-height: 2;
+        font-size: 0.9em;
+    }
+}
+
+
+
+
+
+/* @media (min-width: 601px) and (max-width: 1600px) {
+
+    .ContainerBienvenida img {
+        width: 330px;
+        height: 330px;
+    }
+
+    .ContainerBienvenida .Titulo h1 {
+        font-size: 3.5em;
+
+    }
+
+    .ContainerBienvenida .Titulo p {
+        font-size: 2em;
+    }
+} */
