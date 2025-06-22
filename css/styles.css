@@ -540,7 +540,7 @@ footer a:hover {
     /* Responsive nav */
     .Hamburguesa {
         display: block;
-        z-index: 100;
+        z-index: 101;
     }
 
     nav {
