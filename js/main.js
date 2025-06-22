@@ -68,7 +68,11 @@ const SVGDesarrollo = document.querySelector("#SVGDesarrollo");
 const SVGElectronica = document.querySelector("#SVGElectronica");
 const ImgBienvenida = document.querySelector(".ContainerBienvenida img");
 
+/* Título principal de las cartas con SplitType por caracteres */
+var TituloStack = document.querySelector('.TituloCartas');
+var TituloCartas = document.querySelectorAll('.ContenedorCartas .Carta .Carta-content h1');
 const cartas = document.querySelectorAll(".ContenedorCartas .Carta");
+
 
 /* ====================================================================================================================================
                                             🎯 Animaciones de la navegación
@@ -84,6 +88,18 @@ gsap.from(NavSecciones, {
     y: -100,
     ease: "power3.out",
     stagger: 0.25
+});
+
+document.querySelectorAll('.Secciones ul li').forEach(item => {
+    const icon = item.querySelector('lord-icon');
+
+    item.addEventListener('mouseenter', () => {
+        icon.setAttribute('trigger', 'loop');
+    });
+
+    item.addEventListener('mouseleave', () => {
+        icon.setAttribute('trigger', 'morph');
+    });
 });
 
 /* ====================================================================================================================================
@@ -208,6 +224,9 @@ gsap.to(".Titulo", {
 /* ====================================================================================================================================
                                             🙋 Animaciones de las cartas
 ==================================================================================================================================== */
+const TituloStackCaracteres = new SplitType(TituloStack, { types: 'words, chars' });
+const TituloCartasCaracteres = new SplitType(TituloCartas, { types: 'words, chars' });
+
 cartas.forEach((carta) => {
     let anim;
 
@@ -221,12 +240,24 @@ cartas.forEach((carta) => {
     });
 
     carta.addEventListener("mouseleave", () => {
-        if (anim) anim.kill(); 
+        if (anim) anim.kill();
         gsap.to(carta, {
             boxShadow: "none",
             scale: 1,
             duration: 0.4,
             ease: "sine.inOut"
         });
+    });
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("Hamburguesa");
+    const nav = document.querySelector("nav");
+
+    hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
     });
 });
